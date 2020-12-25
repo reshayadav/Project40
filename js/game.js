@@ -48,9 +48,10 @@ class Game{
                  for(var plr in allPlayers){
                     
                    console.log(allPlayers); 
-                     index = index+1;
                      y=500
                      x = 500-allPlayers[plr].distance;
+                     index = index+1;
+
                      
                      players[index-1].x = x;
                      players[index-1].y = y;
@@ -100,16 +101,22 @@ class Game{
                      fruitGroup.add(fruits);
                      
                  }
-                 
-                  if (player.index !== null) {
-                     //fill code here, to destroy the objects.
-                  }
+               
                 
 
-         
-         
-        
-         
+                   
+                 if (player.index !== null) {
+                    //fill code here, to destroy the objects.
+                    
+                 for(var i=1;i<fruitGroup.length;i++){
+                    if(fruitGroup.get(i).isTouching(players)){
+                        fruitGroup.get(i).destroy();
+                       
+                        player.update();
+                    }
+                }
+                 }
+               
 
     }
 
