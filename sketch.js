@@ -35,13 +35,7 @@ function setup() {
 function draw() {
   background(back_img);
 
-  for(var i=1;i<fruitGroup.length;i++){
-    if(fruitGroup.get(i).isTouching(players)){
-        fruitGroup.get(i).destroy();
-       
-        player.update();
-    }
-}
+    
   
    if (playerCount === 2) {
      game.update(1);
